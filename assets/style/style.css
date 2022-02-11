@@ -1,0 +1,347 @@
+body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+}
+*,
+* :before,
+* :after {
+    box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+/* Container */
+.container{ 
+    width: 100%;
+    max-width: 1200px;
+    margin:0 auto;
+}
+
+/* Intro */
+.intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+
+    background: url("../img/intro.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.intro__inner {
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+  
+}
+
+.intro__title{
+    font-size: 110px;
+    font-weight: 700;
+    text-transform: uppercase;
+    
+    line-height: 1;
+}
+
+.intro__title:after {
+    content: "";
+    display:block;
+    width: 60px;
+    height: 3px;
+    margin: 40px auto;
+
+    background-color: rgb(17, 17, 17);
+}
+
+.intro__suptitle {
+    font-size: 40px;
+   
+    margin-bottom: 20px;
+
+    font-family: 'Kaushan Script', cursive;
+}
+
+
+/* Header */
+.header{
+    width: 100%;
+    padding-top: 30px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+} 
+
+.header__inner{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.header__logo{
+    font-style: 30px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+}
+
+/* Nav */
+.nav{
+    font-style: 14px;
+    text-transform: uppercase;
+}
+
+.nav__link{
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    position: relative;
+    
+    color: black;
+    text-decoration: none;
+
+    transition: color .1s linear;
+}
+
+.nav__link:after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    opacity: 0;
+
+    background-color: rgb(154, 154, 154);
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+
+    transition: opacity .1s linear;
+
+
+}
+.nav__link:hover {
+    color: rgb(154, 154, 154);
+}
+.nav__link:hover:after{
+    opacity: 1;
+}
+
+.nav__link:hover:after,
+.nav__link.active:after{
+    opacity: 1;
+}
+
+.nav__link.active{
+    color: rgb(154, 154, 154);
+}
+/* Button */
+.btn {
+    display: inline-block;
+    vertical-align: top;
+    padding: 8px 30px;
+
+    border: 3px solid rgb(34, 34, 34);
+
+    font-size: 14px;
+    font-weight: 700;
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background .1s linear;
+
+
+
+}
+
+.btn:hover{
+    background-color: rgb(34, 34, 34);
+    color: white;
+}
+
+
+/* Intro Slider */
+.intro__slider{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.slider__inner{
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.slider__items{
+    width: 23%;
+    padding: 20px 0;
+    position: relative;
+
+    border-top: 3px solid;
+    opacity: .7;
+
+    font-size: 10px;
+    text-transform: uppercase;
+
+}
+
+.slider__items.active {
+    opacity: 1;
+}
+
+.slider__items.active:before{
+    content: "";
+    display: block;
+    width: 70px;
+    height: 2px;
+
+    background-color: rgb(255, 75, 75);
+
+    position: absolute;
+    top: -3px;
+    left: 0;
+    z-index: 1;
+}
+
+.slider__num{
+    font-size: 19px;
+    font-weight: 700;
+}
+
+
+
+/* Section */
+
+.section{
+    padding: 80px 0;
+
+}
+
+.section__header{
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto 40px;
+
+    text-align: center;
+
+}
+
+.section__suptitle{
+    font-family: 'Kaushan Script', cursive;
+    font-size: 24px;
+    color: "";
+}
+
+.section__title{
+    font-size: 30px;
+    font-weight: 700;
+    color: "";
+    text-transform: uppercase;
+}
+
+.section__title:after{
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    margin: 30px auto;
+
+    background-color: rgb(255, 75, 75);
+}
+
+.section__text{
+    font-size: 15px;
+    color: rgb(114, 114, 114);
+}
+
+/* About */
+
+.about{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+
+}
+
+.about__item{
+    width: 380px;
+    position: relative;
+    background-color: #333;
+}
+.about__item:hover .about__img{
+    transform: translate3d(-10px, -10px, 0);
+}
+.about__item:hover .about__img img{
+opacity: 0.3;
+}
+.about__item:hover .about__text{
+    opacity: 1;
+}
+
+.about__img{
+    background: linear-gradient(to bottom, rgb(255, 75, 75), rgb(154, 154, 154));
+    transition: transform .1s linear;
+}
+.about__img img{
+    display: block;
+    transition: opacity .1s linear;
+}
+.about__text{
+    width: 100%;
+    font-size: 18px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    opacity: 0;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 2;
+    transform: translate3d(0, -50%, 0);
+    transition: opacity .1s linear;
+
+
+}
+
+
+/* Statistic */
+.statistics{
+    background-color: rgb(255, 132, 132);
+}
+.stat{
+    display: flex;
+}
+.stat__item{
+    flex: 1 1 0;
+    padding: 70px 25px;
+    border-left: 1px solid rgb(255, 156, 156);
+    text-align: center;
+    color: white;
+
+    
+}
+.stat__item:last-child{
+    border-right: 1px solid rgb(236, 133, 133);
+}
+.stat__count{
+    margin-bottom: 10px;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1;
+}
+.stat__text{
+    font-size: 14px;
+    text-transform: uppercase;
+}
